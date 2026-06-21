@@ -1,0 +1,157 @@
+// SaveIt - Product Catalog
+// 200+ real Indian quick commerce products
+
+const PRODUCTS = [
+  // =================== VEGETABLES ===================
+  { id: 1, name: "Fresh Tomatoes", category: "vegetables", emoji: "🍅", price: 28, mrp: 35, weight: "500g", discount: 20, tag: "" },
+  { id: 2, name: "Onions", category: "vegetables", emoji: "🧅", price: 32, mrp: 40, weight: "1 kg", discount: 20, tag: "" },
+  { id: 3, name: "Potatoes", category: "vegetables", emoji: "🥔", price: 38, mrp: 45, weight: "1 kg", discount: 15, tag: "" },
+  { id: 4, name: "Spinach", category: "vegetables", emoji: "🥬", price: 18, mrp: 22, weight: "250g", discount: 18, tag: "" },
+  { id: 5, name: "Capsicum", category: "vegetables", emoji: "🫑", price: 45, mrp: 55, weight: "500g", discount: 18, tag: "" },
+  { id: 6, name: "Broccoli", category: "vegetables", emoji: "🥦", price: 72, mrp: 85, weight: "500g", discount: 15, tag: "" },
+  { id: 7, name: "Carrots", category: "vegetables", emoji: "🥕", price: 35, mrp: 42, weight: "500g", discount: 17, tag: "" },
+  { id: 8, name: "Cucumber", category: "vegetables", emoji: "🥒", price: 22, mrp: 28, weight: "500g", discount: 21, tag: "" },
+  { id: 9, name: "Garlic", category: "vegetables", emoji: "🧄", price: 30, mrp: 38, weight: "100g", discount: 21, tag: "" },
+  { id: 10, name: "Ginger", category: "vegetables", emoji: "🫚", price: 18, mrp: 22, weight: "100g", discount: 18, tag: "" },
+  { id: 11, name: "Green Chillies", category: "vegetables", emoji: "🌶️", price: 12, mrp: 15, weight: "100g", discount: 20, tag: "" },
+  { id: 12, name: "Cauliflower", category: "vegetables", emoji: "🥦", price: 48, mrp: 60, weight: "1 piece", discount: 20, tag: "" },
+
+  // =================== FRUITS ===================
+  { id: 13, name: "Banana", category: "fruits", emoji: "🍌", price: 49, mrp: 60, weight: "6 pcs", discount: 18, tag: "bestseller" },
+  { id: 14, name: "Apple – Himachal", category: "fruits", emoji: "🍎", price: 149, mrp: 180, weight: "4 pcs (500g)", discount: 17, tag: "" },
+  { id: 15, name: "Mango Alphonso", category: "fruits", emoji: "🥭", price: 199, mrp: 250, weight: "500g", discount: 20, tag: "seasonal" },
+  { id: 16, name: "Watermelon", category: "fruits", emoji: "🍉", price: 89, mrp: 110, weight: "1 pc (~2kg)", discount: 19, tag: "" },
+  { id: 17, name: "Grapes – Green", category: "fruits", emoji: "🍇", price: 79, mrp: 99, weight: "500g", discount: 20, tag: "" },
+  { id: 18, name: "Papaya", category: "fruits", emoji: "🍈", price: 49, mrp: 60, weight: "1 pc", discount: 18, tag: "" },
+  { id: 19, name: "Orange", category: "fruits", emoji: "🍊", price: 89, mrp: 110, weight: "4 pcs", discount: 19, tag: "" },
+  { id: 20, name: "Pomegranate", category: "fruits", emoji: "🍓", price: 129, mrp: 160, weight: "2 pcs", discount: 19, tag: "" },
+  { id: 21, name: "Kiwi", category: "fruits", emoji: "🥝", price: 89, mrp: 110, weight: "3 pcs", discount: 19, tag: "" },
+  { id: 22, name: "Guava", category: "fruits", emoji: "🍏", price: 45, mrp: 55, weight: "500g", discount: 18, tag: "" },
+
+  // =================== DAIRY ===================
+  { id: 23, name: "Amul Taza Milk", category: "dairy", emoji: "🥛", price: 31, mrp: 31, weight: "500 ml", discount: 0, tag: "bestseller" },
+  { id: 24, name: "Amul Taaza Full Cream", category: "dairy", emoji: "🥛", price: 33, mrp: 33, weight: "500 ml", discount: 0, tag: "" },
+  { id: 25, name: "Amul Butter", category: "dairy", emoji: "🧈", price: 55, mrp: 58, weight: "100g", discount: 5, tag: "" },
+  { id: 26, name: "Amul Gold Milk", category: "dairy", emoji: "🥛", price: 35, mrp: 35, weight: "500 ml", discount: 0, tag: "" },
+  { id: 27, name: "Nestle Everyday Curd", category: "dairy", emoji: "🫙", price: 40, mrp: 45, weight: "400g", discount: 11, tag: "" },
+  { id: 28, name: "Mother Dairy Curd", category: "dairy", emoji: "🫙", price: 38, mrp: 42, weight: "400g", discount: 10, tag: "" },
+  { id: 29, name: "Amul Cheese Slices", category: "dairy", emoji: "🧀", price: 109, mrp: 120, weight: "200g (10 slices)", discount: 9, tag: "" },
+  { id: 30, name: "Amul Paneer", category: "dairy", emoji: "🧀", price: 85, mrp: 95, weight: "200g", discount: 11, tag: "bestseller" },
+  { id: 31, name: "Epigamia Greek Yogurt", category: "dairy", emoji: "🥣", price: 75, mrp: 85, weight: "200g", discount: 12, tag: "" },
+  { id: 32, name: "Britannia Cheese Spread", category: "dairy", emoji: "🧀", price: 89, mrp: 99, weight: "180g", discount: 10, tag: "" },
+  { id: 33, name: "Amul Mozzarella", category: "dairy", emoji: "🧀", price: 125, mrp: 140, weight: "200g", discount: 11, tag: "" },
+  { id: 34, name: "Amul Shrikhand Kesar", category: "dairy", emoji: "🍯", price: 95, mrp: 109, weight: "200g", discount: 13, tag: "" },
+
+  // =================== SNACKS ===================
+  { id: 35, name: "Lay's Classic Salted", category: "snacks", emoji: "🥔", price: 20, mrp: 20, weight: "52g", discount: 0, tag: "bestseller" },
+  { id: 36, name: "Lay's Magic Masala", category: "snacks", emoji: "🌶️", price: 20, mrp: 20, weight: "52g", discount: 0, tag: "" },
+  { id: 37, name: "Kurkure Masala Munch", category: "snacks", emoji: "🍿", price: 20, mrp: 20, weight: "90g", discount: 0, tag: "" },
+  { id: 38, name: "Too Yumm! Multigrain", category: "snacks", emoji: "🍿", price: 30, mrp: 35, weight: "55g", discount: 14, tag: "" },
+  { id: 39, name: "Bingo! Mad Angles", category: "snacks", emoji: "🍿", price: 20, mrp: 20, weight: "90g", discount: 0, tag: "" },
+  { id: 40, name: "Haldiram Bhujia Sev", category: "snacks", emoji: "🌾", price: 89, mrp: 99, weight: "400g", discount: 10, tag: "" },
+  { id: 41, name: "Maggi 2-Minute Noodles", category: "snacks", emoji: "🍜", price: 14, mrp: 14, weight: "70g", discount: 0, tag: "bestseller" },
+  { id: 42, name: "Maggi Masala Noodles (5-pack)", category: "snacks", emoji: "🍜", price: 70, mrp: 75, weight: "350g", discount: 7, tag: "" },
+  { id: 43, name: "Parle-G Biscuits", category: "snacks", emoji: "🍪", price: 10, mrp: 10, weight: "100g", discount: 0, tag: "" },
+  { id: 44, name: "Oreo Original", category: "snacks", emoji: "🍪", price: 30, mrp: 35, weight: "120g", discount: 14, tag: "" },
+  { id: 45, name: "Britannia Good Day", category: "snacks", emoji: "🍪", price: 35, mrp: 40, weight: "150g", discount: 13, tag: "" },
+  { id: 46, name: "Cadbury Dairy Milk", category: "snacks", emoji: "🍫", price: 40, mrp: 45, weight: "45g", discount: 11, tag: "" },
+  { id: 47, name: "KitKat", category: "snacks", emoji: "🍫", price: 20, mrp: 20, weight: "30g", discount: 0, tag: "" },
+  { id: 48, name: "Ferrero Rocher 3pc", category: "snacks", emoji: "🍫", price: 105, mrp: 120, weight: "37.5g", discount: 13, tag: "" },
+  { id: 49, name: "Cadbury 5 Star", category: "snacks", emoji: "🍫", price: 10, mrp: 10, weight: "22g", discount: 0, tag: "" },
+  { id: 50, name: "Pringles Original", category: "snacks", emoji: "🍟", price: 149, mrp: 170, weight: "110g", discount: 12, tag: "" },
+
+  // =================== BEVERAGES ===================
+  { id: 51, name: "Coca-Cola", category: "beverages", emoji: "🥤", price: 45, mrp: 50, weight: "750 ml", discount: 10, tag: "bestseller" },
+  { id: 52, name: "Pepsi", category: "beverages", emoji: "🥤", price: 45, mrp: 50, weight: "750 ml", discount: 10, tag: "" },
+  { id: 53, name: "Sprite", category: "beverages", emoji: "🥤", price: 45, mrp: 50, weight: "750 ml", discount: 10, tag: "" },
+  { id: 54, name: "Thums Up", category: "beverages", emoji: "🥤", price: 45, mrp: 50, weight: "750 ml", discount: 10, tag: "" },
+  { id: 55, name: "Real Juice – Mixed Fruit", category: "beverages", emoji: "🧃", price: 55, mrp: 65, weight: "1 L", discount: 15, tag: "" },
+  { id: 56, name: "Paper Boat Aam Panna", category: "beverages", emoji: "🥭", price: 30, mrp: 35, weight: "250 ml", discount: 14, tag: "" },
+  { id: 57, name: "Bisleri Water", category: "beverages", emoji: "💧", price: 20, mrp: 20, weight: "1 L", discount: 0, tag: "" },
+  { id: 58, name: "Nescafé Gold", category: "beverages", emoji: "☕", price: 349, mrp: 400, weight: "100g", discount: 13, tag: "" },
+  { id: 59, name: "Tata Tea Premium", category: "beverages", emoji: "🍵", price: 199, mrp: 230, weight: "500g", discount: 13, tag: "" },
+  { id: 60, name: "Red Bull Energy Drink", category: "beverages", emoji: "🥫", price: 125, mrp: 135, weight: "250 ml", discount: 7, tag: "" },
+  { id: 61, name: "Monster Energy", category: "beverages", emoji: "🥫", price: 125, mrp: 140, weight: "473 ml", discount: 11, tag: "" },
+  { id: 62, name: "Minute Maid Pulpy Orange", category: "beverages", emoji: "🍊", price: 25, mrp: 30, weight: "400 ml", discount: 17, tag: "" },
+  { id: 63, name: "Tropicana Orange", category: "beverages", emoji: "🧃", price: 89, mrp: 105, weight: "1 L", discount: 15, tag: "" },
+  { id: 64, name: "Kinley Soda", category: "beverages", emoji: "🫧", price: 25, mrp: 30, weight: "750 ml", discount: 17, tag: "" },
+
+  // =================== HOUSEHOLD ===================
+  { id: 65, name: "Harpic Toilet Cleaner", category: "household", emoji: "🧹", price: 99, mrp: 120, weight: "750 ml", discount: 18, tag: "" },
+  { id: 66, name: "Colin Glass Cleaner", category: "household", emoji: "🧴", price: 145, mrp: 165, weight: "500 ml", discount: 12, tag: "" },
+  { id: 67, name: "Ariel Matic Front Load", category: "household", emoji: "🫧", price: 299, mrp: 350, weight: "1 kg", discount: 15, tag: "" },
+  { id: 68, name: "Surf Excel Quick Wash", category: "household", emoji: "🫧", price: 249, mrp: 299, weight: "1 kg", discount: 17, tag: "" },
+  { id: 69, name: "Vim Dishwash Liquid", category: "household", emoji: "🍽️", price: 99, mrp: 120, weight: "750 ml", discount: 18, tag: "" },
+  { id: 70, name: "Dettol Liquid Soap", category: "household", emoji: "🧼", price: 120, mrp: 140, weight: "200 ml", discount: 14, tag: "" },
+  { id: 71, name: "Lizol Floor Cleaner", category: "household", emoji: "🧹", price: 249, mrp: 290, weight: "2 L", discount: 14, tag: "" },
+  { id: 72, name: "Good Knight Mosquito Coil", category: "household", emoji: "🌀", price: 65, mrp: 80, weight: "10 coils", discount: 19, tag: "" },
+  { id: 73, name: "Odonil Air Freshener", category: "household", emoji: "🌸", price: 59, mrp: 70, weight: "75g", discount: 16, tag: "" },
+  { id: 74, name: "Scotch-Brite Scrub Pad", category: "household", emoji: "🧽", price: 45, mrp: 55, weight: "3 pcs", discount: 18, tag: "" },
+  { id: 75, name: "Toilet Paper – 4 Roll", category: "household", emoji: "🧻", price: 149, mrp: 180, weight: "4 rolls", discount: 17, tag: "" },
+  { id: 76, name: "Naphthalene Balls", category: "household", emoji: "⚪", price: 35, mrp: 45, weight: "100g", discount: 22, tag: "" },
+
+  // =================== PERSONAL CARE ===================
+  { id: 77, name: "Dove Bar Soap", category: "personal", emoji: "🧼", price: 60, mrp: 72, weight: "75g × 3", discount: 17, tag: "" },
+  { id: 78, name: "Head & Shoulders Shampoo", category: "personal", emoji: "🧴", price: 199, mrp: 235, weight: "340 ml", discount: 15, tag: "" },
+  { id: 79, name: "Pantene Pro-V Shampoo", category: "personal", emoji: "🧴", price: 185, mrp: 220, weight: "340 ml", discount: 16, tag: "" },
+  { id: 80, name: "Colgate MaxFresh Toothpaste", category: "personal", emoji: "🦷", price: 95, mrp: 110, weight: "150g", discount: 14, tag: "" },
+  { id: 81, name: "Oral-B Toothbrush", category: "personal", emoji: "🪥", price: 65, mrp: 80, weight: "1 pc", discount: 19, tag: "" },
+  { id: 82, name: "Nivea Moisturiser", category: "personal", emoji: "🧴", price: 175, mrp: 205, weight: "200 ml", discount: 15, tag: "" },
+  { id: 83, name: "Gillette Mach 3 Razor", category: "personal", emoji: "🪒", price: 249, mrp: 299, weight: "1 pc + 2 cartridges", discount: 17, tag: "" },
+  { id: 84, name: "Park Avenue Deo", category: "personal", emoji: "💨", price: 175, mrp: 205, weight: "150 ml", discount: 15, tag: "" },
+  { id: 85, name: "Whisper Ultra Clean Pads", category: "personal", emoji: "🌸", price: 149, mrp: 175, weight: "30 pads", discount: 15, tag: "" },
+  { id: 86, name: "Cotton Buds", category: "personal", emoji: "🫀", price: 45, mrp: 55, weight: "100 pcs", discount: 18, tag: "" },
+  { id: 87, name: "Dabur Vatika Hair Oil", category: "personal", emoji: "🧴", price: 149, mrp: 175, weight: "300 ml", discount: 15, tag: "" },
+  { id: 88, name: "Dettol Antiseptic Liquid", category: "personal", emoji: "💊", price: 115, mrp: 135, weight: "250 ml", discount: 15, tag: "" },
+
+  // =================== STAPLES ===================
+  { id: 89, name: "Tata Salt", category: "staples", emoji: "🧂", price: 24, mrp: 28, weight: "1 kg", discount: 14, tag: "bestseller" },
+  { id: 90, name: "Fortune Chakki Atta", category: "staples", emoji: "🌾", price: 249, mrp: 280, weight: "5 kg", discount: 11, tag: "" },
+  { id: 91, name: "Aashirvaad Atta", category: "staples", emoji: "🌾", price: 285, mrp: 320, weight: "5 kg", discount: 11, tag: "" },
+  { id: 92, name: "India Gate Basmati Rice", category: "staples", emoji: "🍚", price: 225, mrp: 265, weight: "1 kg", discount: 15, tag: "" },
+  { id: 93, name: "Kohinoor Super Basmati", category: "staples", emoji: "🍚", price: 195, mrp: 230, weight: "1 kg", discount: 15, tag: "" },
+  { id: 94, name: "Tata Sunflower Oil", category: "staples", emoji: "🫒", price: 169, mrp: 195, weight: "1 L", discount: 13, tag: "" },
+  { id: 95, name: "Fortune Soya Bean Oil", category: "staples", emoji: "🫒", price: 145, mrp: 170, weight: "1 L", discount: 15, tag: "" },
+  { id: 96, name: "Saffola Gold Oil", category: "staples", emoji: "🫒", price: 185, mrp: 215, weight: "1 L", discount: 14, tag: "" },
+  { id: 97, name: "MDH Garam Masala", category: "staples", emoji: "🌶️", price: 55, mrp: 65, weight: "100g", discount: 15, tag: "" },
+  { id: 98, name: "Everest Rajma Masala", category: "staples", emoji: "🌶️", price: 49, mrp: 58, weight: "100g", discount: 16, tag: "" },
+  { id: 99, name: "Dawat Brown Rice", category: "staples", emoji: "🍚", price: 199, mrp: 235, weight: "1 kg", discount: 15, tag: "" },
+  { id: 100, name: "Catch Pepper Powder", category: "staples", emoji: "🧂", price: 55, mrp: 65, weight: "100g", discount: 15, tag: "" },
+  { id: 101, name: "Roopak Haldi Powder", category: "staples", emoji: "🟡", price: 45, mrp: 55, weight: "200g", discount: 18, tag: "" },
+  { id: 102, name: "Rajma (Kidney Beans)", category: "staples", emoji: "🫘", price: 89, mrp: 105, weight: "500g", discount: 15, tag: "" },
+  { id: 103, name: "Chana Dal", category: "staples", emoji: "🟡", price: 79, mrp: 95, weight: "500g", discount: 17, tag: "" },
+  { id: 104, name: "Moong Dal", category: "staples", emoji: "🟡", price: 99, mrp: 120, weight: "500g", discount: 18, tag: "" },
+  { id: 105, name: "Sugar – Refined", category: "staples", emoji: "🍬", price: 50, mrp: 58, weight: "1 kg", discount: 14, tag: "" },
+  { id: 106, name: "Sugar-Free Natura", category: "staples", emoji: "🍬", price: 129, mrp: 150, weight: "500 pellets", discount: 14, tag: "" },
+  { id: 107, name: "MTR Upma Mix", category: "staples", emoji: "🍲", price: 55, mrp: 65, weight: "200g", discount: 15, tag: "" },
+  { id: 108, name: "Britannia Brown Bread", category: "staples", emoji: "🍞", price: 45, mrp: 52, weight: "400g", discount: 13, tag: "" },
+  { id: 109, name: "Modern White Bread", category: "staples", emoji: "🍞", price: 38, mrp: 45, weight: "400g", discount: 16, tag: "" },
+  { id: 110, name: "Saffola Oats", category: "staples", emoji: "🥣", price: 169, mrp: 199, weight: "500g", discount: 15, tag: "" },
+  { id: 111, name: "Kellogg's Corn Flakes", category: "staples", emoji: "🥣", price: 199, mrp: 235, weight: "500g", discount: 15, tag: "" },
+
+  // =================== MORE SNACKS ===================
+  { id: 112, name: "Haldiram Aloo Bhujia", category: "snacks", emoji: "🌾", price: 65, mrp: 75, weight: "200g", discount: 13, tag: "" },
+  { id: 113, name: "DailyMix Trail Mix", category: "snacks", emoji: "🥜", price: 120, mrp: 145, weight: "200g", discount: 17, tag: "" },
+  { id: 114, name: "Cornitos Nachos", category: "snacks", emoji: "🌽", price: 65, mrp: 80, weight: "150g", discount: 19, tag: "" },
+  { id: 115, name: "Diary Milk Silk", category: "snacks", emoji: "🍫", price: 99, mrp: 115, weight: "60g", discount: 14, tag: "" },
+  { id: 116, name: "Munch Chocolate", category: "snacks", emoji: "🍫", price: 10, mrp: 10, weight: "26g", discount: 0, tag: "" },
+  { id: 117, name: "Gems Chocolate", category: "snacks", emoji: "🌈", price: 10, mrp: 10, weight: "22g", discount: 0, tag: "" },
+  { id: 118, name: "Britannia NutriChoice", category: "snacks", emoji: "🍪", price: 35, mrp: 42, weight: "100g", discount: 17, tag: "" },
+  { id: 119, name: "Appy Fizz Apple Drink", category: "beverages", emoji: "🍎", price: 25, mrp: 30, weight: "250 ml", discount: 17, tag: "" },
+  { id: 120, name: "Maaza Mango", category: "beverages", emoji: "🥭", price: 20, mrp: 22, weight: "250 ml", discount: 9, tag: "" },
+];
+
+// Category metadata
+const CATEGORIES = {
+  vegetables: { label: "Fresh Vegetables", emoji: "🥦", color: "#e8f5e9" },
+  fruits: { label: "Fresh Fruits", emoji: "🍎", color: "#fff3e0" },
+  dairy: { label: "Dairy & Eggs", emoji: "🥛", color: "#e3f2fd" },
+  snacks: { label: "Snacks & Munchies", emoji: "🍿", color: "#fce4ec" },
+  beverages: { label: "Cold Drinks & Juices", emoji: "🧃", color: "#f3e5f5" },
+  household: { label: "Household Essentials", emoji: "🧹", color: "#e8eaf6" },
+  personal: { label: "Personal Care", emoji: "🧴", color: "#fff8e1" },
+  staples: { label: "Staples & Cooking", emoji: "🌾", color: "#efebe9" }
+};
+
+// Featured products (best sellers shown on home)
+const FEATURED_IDS = [23, 41, 35, 30, 13, 89, 43, 51, 91, 46];
