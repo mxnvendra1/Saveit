@@ -5,7 +5,7 @@
 // STATE
 // ==================
 let cart = {};
-let location = "";
+let userLocation = "";
 let totalSaved = 0;
 let orderCount = 0;
 let streak = 0;
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       splash.classList.add("fade-out");
       setTimeout(() => {
         splash.style.display = "none";
-        if (!location) {
+        if (!userLocation) {
           showLocationModal();
         } else {
           showApp();
@@ -45,7 +45,7 @@ function loadState() {
       streak = s.streak || 0;
       lastOrderDate = s.lastOrderDate || null;
       orders = s.orders || [];
-      location = s.location || "";
+      userLocation = s.location || "";
     }
   } catch(e) {}
 }
@@ -53,7 +53,7 @@ function loadState() {
 function saveState() {
   try {
     localStorage.setItem("saveit_state", JSON.stringify({
-      totalSaved, orderCount, streak, lastOrderDate, orders, location
+      totalSaved, orderCount, streak, lastOrderDate, orders, location: userLocation
     }));
   } catch(e) {}
 }
@@ -79,10 +79,10 @@ function setLocation(loc) {
 
 function confirmLocation() {
   const input = document.getElementById("location-input").value.trim();
-  location = input || "Koramangala, Bengaluru";
+  userLocation = input || "Koramangala, Bengaluru";
   document.getElementById("header-location").innerHTML =
-    location.split(",")[0] + ` <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>`;
-  document.getElementById("checkout-address-text").textContent = location;
+    userLocation.split(",")[0] + ` <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>`;
+  document.getElementById("checkout-address-text").textContent = userLocation;
   closeAllModals();
   saveState();
   if (document.getElementById("app").classList.contains("hidden")) {
@@ -321,7 +321,7 @@ function renderCheckout() {
     itemsContainer.appendChild(item);
   });
 
-  document.getElementById("checkout-address-text").textContent = location || "Koramangala, Bengaluru";
+  document.getElementById("checkout-address-text").textContent = userLocation || "Koramangala, Bengaluru";
   document.getElementById("checkout-item-total").textContent = `₹${total}`;
   document.getElementById("checkout-total").textContent = `₹${total}`;
 }
@@ -689,7 +689,7 @@ function resetData() {
   if (confirm("Reset all savings data?")) {
     totalSaved = 0; orderCount = 0; streak = 0; lastOrderDate = null; orders = [];
     saveState();
-    location = "";
+    
     cart = {};
     updateCartBar();
     alert("Data reset! Reloading...");
